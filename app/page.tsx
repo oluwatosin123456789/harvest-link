@@ -1,11 +1,13 @@
 import Navbar from "@/Components/Navbar"
 import Hero from "@/Components/Hero"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
     <main className="bg-cream min-h-screen">
       <Navbar />
       <Hero />
+      <Footer />
       
       {/* The rest of your sections (Grid, Footer) go here */}
       <div className="py-20 text-center">

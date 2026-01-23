@@ -4,24 +4,24 @@ export default function Hero() {
   return (
     <section className="relative h-[85vh] min-h-[600px] flex flex-col items-center justify-center px-4 overflow-hidden">
       
-      {/* 1. Background Image with Premium Overlay */}
+      
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070&auto=format&fit=crop" 
           alt="Farm Landscape" 
           className="w-full h-full object-cover"
         />
-        {/* Gradient: Dark at bottom for text readability, light at top */}
+        
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-harvest-green/90" />
       </div>
 
-      {/* 2. Hero Content */}
+      
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center mt-16">
         
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6 animate-fade-in-up">
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-          <span className="text-white text-xs font-bold tracking-widest uppercase">Live Market: 450+ Active Farms</span>
+          <span className="text-white text-xs font-bold tracking-widest uppercase">Live Market: 450+ Active Farms    </span>
         </div>
 
         {/* Headline */}

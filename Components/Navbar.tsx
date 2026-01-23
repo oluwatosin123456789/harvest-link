@@ -32,7 +32,7 @@ export default function Navbar() {
           </button>
           
           <Link href="/auth/login">
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-harvest-green text-white rounded-full hover:bg-green-900 transition cursor-pointer">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-harvest-green text-green rounded-full hover:bg-black-900 transition cursor-pointer">
               <User className="w-4 h-4" />
               <span className="text-sm font-medium hidden sm:block">Sign In</span>
             </div>
