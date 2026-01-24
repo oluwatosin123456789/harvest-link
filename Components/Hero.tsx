@@ -66,7 +66,7 @@ export default function Hero() {
           </div>
 
           {/* Search Button */}
-          <button className="bg-harvest-green hover:bg-green-900 text-white p-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-green-900/30 flex items-center gap-2 w-full md:w-auto justify-center px-8">
+          <button className="bg-harvest-green hover:bg-green-400 text-white p-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-green-900/30 flex items-center gap-2 w-full md:w-auto justify-center px-8">
             <Search className="w-5 h-5" />
             <span className="md:hidden font-bold">Search Now</span>
           </button>
