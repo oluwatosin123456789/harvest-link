@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/Components/ui/button'
 import { Card } from '@/Components/ui/card'
+
 import { MapPin, Truck, CheckCircle, Menu } from 'lucide-react'
 
 export default function LandingPage() {
@@ -45,7 +46,8 @@ export default function LandingPage() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="text-center">
           <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 tracking-tight">
-            Fresh Food. Zero Waste.
+            
+            Find Fresh Food Near You.
           </h1>
           <p className="mt-6 text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto">
             We use location-based matching to connect Nigerian farmers directly with nearby buyers.
