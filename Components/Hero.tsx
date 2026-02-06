@@ -7,7 +7,7 @@ export default function Hero() {
       
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1769442872238-e1912656f940?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
           alt="Farm Landscape" 
           className="w-full h-full object-cover"
         />
@@ -24,7 +24,7 @@ export default function Hero() {
           <span className="text-white text-xs font-bold tracking-widest uppercase">Live Market: 450+ Active Farms    </span>
         </div>
 
-        {/* Headline */}
+        {/* Headline */}l
         <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-2xl">
           Your Dream Harvest, <br /> Just a Click Away.
         </h1>
