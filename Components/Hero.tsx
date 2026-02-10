@@ -24,7 +24,7 @@ export default function Hero() {
           <span className="text-white text-xs font-bold tracking-widest uppercase">Live Market: 450+ Active Farms    </span>
         </div>
 
-        {/* Headline */}l
+        {/* Headline */}
         <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-2xl">
           Your Dream Harvest, <br /> Just a Click Away.
         </h1>
