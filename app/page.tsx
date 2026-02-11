@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Images } from '@/public/images/nrd-D6Tu_L3chLE-unsplash.jpg'
+import Image from 'next/image'
 import { Hero} from  '@/Components/Hero'
 import { Footer } from '@/Components/Footer'
 import { Button } from '@/Components/ui/button'
@@ -48,32 +48,34 @@ export default function LandingPage() {
 
 
 
-      {/* Hero Section */}
-<section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32 overflow-hidden">
+   {/* Hero Section */}
+<section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32 overflow-hidden rounded-xl">
   {/* Background Image */}
-  <div className="absolute inset-0 -z-10">
-    <img 
-      src="/images/nrd-D6Tu_L3chLE-unsplash.jpg" 
-      alt="Farm Landscape" 
-      className="w-full h-full object-cover"
-    />
-    {/* Dark overlay for better text contrast */}
-    <div className="absolute inset-0 bg-black/50"></div>
-  </div>
+  <Image
+    src="/images/nrd-D6Tu_L3chLE-unsplash.jpg"
+    alt="Farm Landscape"
+    fill
+    className="object-cover -z-20"
+    priority
+    quality={90}
+  />
+  
+  {/* Dark overlay for better text contrast */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 -z-10"></div>
   
   {/* Content */}
   <div className="relative z-10 text-center">
-    <h1 className="text-5xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-lg">
+    <h1 className="text-5xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-2xl">
       Find Fresh Food Near You.
     </h1>
-    <p className="mt-6 text-xl lg:text-2xl text-white max-w-3xl mx-auto drop-shadow-md">
+    <p className="mt-6 text-xl lg:text-2xl text-white max-w-3xl mx-auto drop-shadow-lg">
       We use location-based matching to connect Nigerian farmers directly with nearby buyers.
     </p>
     
     <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
       <Button 
         size="lg" 
-        className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-6 w-full sm:w-auto shadow-xl"
+        className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-6 w-full sm:w-auto shadow-2xl"
         asChild
       >
         <Link href="/auth/select-type">I Want to Buy Fresh Food</Link>
@@ -81,7 +83,7 @@ export default function LandingPage() {
       <Button 
         size="lg" 
         variant="outline" 
-        className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 text-lg px-8 py-6 w-full sm:w-auto shadow-xl"
+        className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 text-lg px-8 py-6 w-full sm:w-auto shadow-2xl"
         asChild
       >
         <Link href="/auth/select-type">I Am a Farmer</Link>
@@ -89,7 +91,6 @@ export default function LandingPage() {
     </div>
   </div>
 </section>
-
 
 
 
