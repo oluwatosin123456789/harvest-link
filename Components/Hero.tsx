@@ -7,7 +7,7 @@ export default function Hero() {
       
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1769442872238-e1912656f940?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          src="public/images/nrd-D6Tu_L3chLE-unsplash.jpg" 
           alt="Farm Landscape" 
           className="w-full h-full object-cover"
         />

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Images } from '@/public/images/nrd-D6Tu_L3chLE-unsplash.jpg'
 import { Hero} from  '@/Components/Hero'
 import { Footer } from '@/Components/Footer'
 import { Button } from '@/Components/ui/button'
@@ -9,6 +10,93 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
      
+      {/* Navbar */}
+      <nav className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <div className="flex items-center">
+              <Link href="/" className="text-2xl font-bold text-emerald-700">
+                Harvest-Link
+              </Link>
+            </div>
+            
+            <div className="hidden md:flex md:items-center md:space-x-8">
+              <Link href="#how-it-works" className="text-sm font-medium text-gray-700 hover:text-emerald-700 transition">
+                How It Works
+              </Link>
+              <Link href="#about" className="text-sm font-medium text-gray-700 hover:text-emerald-700 transition">
+                About
+              </Link>
+            </div>
+
+            <div className="hidden md:flex md:items-center md:space-x-4">
+              <Button variant="ghost" asChild>
+                <Link href="/auth/login">Login</Link>
+              </Button>
+              <Button className="bg-emerald-600 hover:bg-emerald-700" asChild>
+                <Link href="/auth/signup">Get Started</Link>
+              </Button>
+            </div>
+
+            <button className="md:hidden p-2">
+              <Menu className="h-6 w-6 text-gray-700" />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+      {/* Hero Section */}
+<section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32 overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0 -z-10">
+    <img 
+      src="/images/nrd-D6Tu_L3chLE-unsplash.jpg" 
+      alt="Farm Landscape" 
+      className="w-full h-full object-cover"
+    />
+    {/* Dark overlay for better text contrast */}
+    <div className="absolute inset-0 bg-black/50"></div>
+  </div>
+  
+  {/* Content */}
+  <div className="relative z-10 text-center">
+    <h1 className="text-5xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-lg">
+      Find Fresh Food Near You.
+    </h1>
+    <p className="mt-6 text-xl lg:text-2xl text-white max-w-3xl mx-auto drop-shadow-md">
+      We use location-based matching to connect Nigerian farmers directly with nearby buyers.
+    </p>
+    
+    <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <Button 
+        size="lg" 
+        className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-6 w-full sm:w-auto shadow-xl"
+        asChild
+      >
+        <Link href="/auth/select-type">I Want to Buy Fresh Food</Link>
+      </Button>
+      <Button 
+        size="lg" 
+        variant="outline" 
+        className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 text-lg px-8 py-6 w-full sm:w-auto shadow-xl"
+        asChild
+      >
+        <Link href="/auth/select-type">I Am a Farmer</Link>
+      </Button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
       
       {/* Two-Worlds Section */}
       <section className="bg-gray-50 py-20">
@@ -134,6 +222,22 @@ export default function LandingPage() {
         </div>
       </section>
 
+{/* Footer */}
+      <footer className="border-t bg-white py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-emerald-700 mb-2">
+              Harvest-Link
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Connecting Nigerian farms to local markets through location intelligence
+            </p>
+            <p className="text-sm text-gray-500">
+              © {new Date().getFullYear()} Harvest-Link. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
       
     </div>
   )
