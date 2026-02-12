@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Hero} from  '@/Components/Hero'
-import { Footer } from '@/Components/Footer'
+
 import { Button } from '@/Components/ui/button'
 import { Card } from '@/Components/ui/card'
 import { MapPin, Truck, CheckCircle, Menu } from 'lucide-react'
@@ -65,10 +64,10 @@ export default function LandingPage() {
   
   {/* Content */}
   <div className="relative z-10 text-center">
-    <h1 className="text-5xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-2xl">
+    <h1 className="text-5xl lg:text-7xl font-bold text-green-700 tracking-tight drop-shadow-2xl">
       Find Fresh Food Near You.
     </h1>
-    <p className="mt-6 text-xl lg:text-2xl text-white max-w-3xl mx-auto drop-shadow-lg">
+    <p className="mt-6 text-xl lg:text-2xl text-green-600 max-w-3xl mx-auto drop-shadow-lg">
       We use location-based matching to connect Nigerian farmers directly with nearby buyers.
     </p>
     
@@ -83,7 +82,7 @@ export default function LandingPage() {
       <Button 
         size="lg" 
         variant="outline" 
-        className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 text-lg px-8 py-6 w-full sm:w-auto shadow-2xl"
+        className="border-2 border-white bg-white/10 backdrop-blur-sm text-black hover:bg-green/20 text-lg px-8 py-6 w-full sm:w-auto shadow-2xl"
         asChild
       >
         <Link href="/auth/select-type">I Am a Farmer</Link>
