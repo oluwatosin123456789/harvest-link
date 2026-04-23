@@ -184,7 +184,7 @@ export default function SignupPage() {
 
             {/* Passphrase */}
             <div>
-              <label className="input-label block mb-2">Passphrase</label>
+              <label className="input-label block mb-2">Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
