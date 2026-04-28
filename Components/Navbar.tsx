@@ -3,17 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-/* ─────────────────────────────────────────────
- * Navbar — "The Modern Agrarian"
- *
- * Three states:
- *   1. Default  — transparent, overlays hero image
- *   2. Scrolled — solid Toasted Grain, Forest Moss wordmark
- *   3. Mobile   — full-screen Forest Moss takeover
- *
- * The nav should feel invisible. It's there,
- * but it doesn't dominate. Think: premium editorial.
- * ───────────────────────────────────────────── */
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
