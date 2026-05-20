@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+/* ─────────────────────────────────────────────
+ * Footer — Minimal. Forest Moss. Editorial.
+ *
+ * No social icons cluttering the space.
+ * No newsletter input.
+ * Just the wordmark, a few links, and a copyright.
+ * Clean enough to belong in a design gallery.
+ * ───────────────────────────────────────────── */
 
 const NAV_LINKS = [
   { label: "How It Works", href: "#how-it-works" },
