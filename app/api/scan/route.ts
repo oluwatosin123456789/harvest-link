@@ -138,7 +138,9 @@ export async function POST(request: NextRequest) {
     const result = JSON.parse(cleanedText)
 
     /* Store the scan in the database */
-    const { data: scan, error: scanError } = await supabase.from('produce_scans').insert({
+    /* A failed insert must not sink the scan — the assessment is still
+     * returned to the farmer; only the audit row is lost. */
+    const { data: scan } = await supabase.from('produce_scans').insert({
       farmer_id: user.id,
       listing_id: listing_id || null,
       freshness_score: result.freshness_score,

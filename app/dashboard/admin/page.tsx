@@ -139,7 +139,7 @@ export default function AdminDashboardPage() {
       {/* Disclaimer */}
       <div className="bg-warm-gray/10 rounded-lg p-4 text-center">
         <p className="text-xs text-warm-gray max-w-4xl mx-auto">
-          <span className="font-bold text-deep-charcoal">CRITICAL NOTICE:</span> This profile is a decision-support tool. Wema Bank's lending decisions are made independently using Wema's own approved underwriting processes. This profile does not constitute a loan offer or guarantee.
+          <span className="font-bold text-deep-charcoal">CRITICAL NOTICE:</span> This profile is a decision-support tool. Wema Bank&apos;s lending decisions are made independently using Wema&apos;s own approved underwriting processes. This profile does not constitute a loan offer or guarantee.
         </p>
       </div>
     </div>

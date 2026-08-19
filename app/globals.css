@@ -460,3 +460,31 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ── Product form input ─────────────────────────
+ * Boxed rather than the marketing pages' underline
+ * style — these are data entry fields on a working
+ * screen, not an editorial sign-up form.
+ * ───────────────────────────────────────────── */
+.listing-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  background: #FFFFFF;
+  border: 1px solid #D9D0C3;
+  border-radius: 4px;
+  font-family: var(--font-body), "Space Grotesk", sans-serif;
+  font-size: 15px;
+  color: #1A1A1A;
+  outline: none;
+  transition: border-color var(--duration-fast, 180ms) ease;
+}
+
+.listing-input:focus {
+  border-color: #2D4739;
+  box-shadow: 0 0 0 3px rgba(45, 71, 57, 0.12);
+}
+
+.listing-input::placeholder {
+  color: #8C8C7A;
+}

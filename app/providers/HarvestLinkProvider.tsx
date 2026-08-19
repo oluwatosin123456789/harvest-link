@@ -116,11 +116,19 @@ export function HarvestLinkProvider({ children }: { children: React.ReactNode })
   const [state, setState] = useState<HarvestLinkState>(INITIAL);
   const [hydrated, setHydrated] = useState(false);
 
-  /* Restore after mount — reading storage during render would
-   * desync the server-rendered HTML. */
+  /* Restore after mount.
+   *
+   * sessionStorage doesn't exist on the server, so the first render
+   * has to use INITIAL on both sides and adopt the saved state once.
+   * Doing it in a lazy useState initializer instead would make the
+   * client's first render disagree with the server's HTML.
+   *
+   * eslint-disable-next-line is deliberate: the rule guards against
+   * cascading renders, and this fires exactly once per mount. */
   useEffect(() => {
     try {
       const saved = sessionStorage.getItem(STORAGE_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (saved) setState({ ...INITIAL, ...JSON.parse(saved) });
     } catch {
       // Private mode, quota, or corrupt payload — start clean.

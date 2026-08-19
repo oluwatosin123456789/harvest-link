@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { useHarvestLink } from "@/app/providers/HarvestLinkProvider";
 import Link from "next/link";
 
 /* ─────────────────────────────────────────────
@@ -25,6 +26,7 @@ interface ScanResult {
 }
 
 export default function ScannerPage() {
+  const { recordScan } = useHarvestLink();
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [scanning, setScanning] = useState(false);
   const [result, setResult] = useState<ScanResult | null>(null);
@@ -69,6 +71,19 @@ export default function ScannerPage() {
 
       const data = await response.json();
       setResult(data);
+
+      /* Hand the assessment to the walkthrough thread so the listing
+       * screen can attach it without the farmer re-entering anything. */
+      recordScan({
+        detectedProduce: data.detected_produce,
+        freshnessScore: data.freshness_score,
+        freshnessCategory: data.freshness_category,
+        shelfLifeDays: data.estimated_shelf_life_days,
+        confidence: data.confidence_score,
+        storage: data.storage_recommendations?.[0] ?? "Cool, dry area",
+        indicators: data.visual_indicators ?? [],
+        live: !data.is_mock,
+      });
     } catch {
       setError("Scan failed. Please try again.");
     } finally {
@@ -283,10 +298,10 @@ export default function ScannerPage() {
             {/* Actions */}
             <div className="flex gap-4">
               <Link
-                href="/dashboard/farmer/listings"
+                href="/dashboard/farmer/create-listing"
                 className="btn-burnt-clay squircle-sm flex-1 py-4 text-center text-[14px] font-medium"
               >
-                List This Produce
+                Use for listing
               </Link>
               <button
                 onClick={resetScan}
