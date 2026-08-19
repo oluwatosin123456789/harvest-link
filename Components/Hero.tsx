@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 /* ─────────────────────────────────────────────
- * Hero — "Closing the Distance"
+ * Hero — "From Farm Activity to Financial Identity"
  *
  * Full-bleed editorial hero at 85vh.
  * Headline bottom-left aligned like a magazine cover.
@@ -35,14 +35,12 @@ export default function Hero() {
 
           {/* Headline — Cormorant Garamond, editorial scale */}
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-semibold text-toasted-grain leading-[1.05] tracking-tight animate-fade-up">
-            Closing the Distance
-            <br />
-            Between Soil and Table.
+            From Farm Activity to<br />Financial Identity.
           </h1>
 
           {/* Subtitle — Space Grotesk, precise */}
-          <p className="mt-6 font-body text-[15px] md:text-[16px] text-toasted-grain/70 tracking-[0.5px] max-w-xl animate-fade-up-delay-1">
-            Location-matched produce. From harvest to your hands in hours, not days.
+          <p className="mt-6 font-body text-[15px] md:text-[16px] text-toasted-grain/80 tracking-[0.5px] max-w-xl animate-fade-up-delay-1 leading-relaxed">
+            Harvest-Link converts real agricultural activity into structured financial identity — turning invisible farmers into a verified pipeline for formal finance.
           </p>
 
           {/* CTAs — Embossed labels, not SaaS buttons */}
@@ -51,13 +49,13 @@ export default function Hero() {
               href="/auth/signup?role=farmer"
               className="btn-burnt-clay squircle-pill px-8 py-4 text-[14px] text-center"
             >
-              Secure Your Harvest
+              I&apos;m a Farmer
             </Link>
             <Link
-              href="/auth/signup?role=buyer"
+              href="/auth/signup?role=consumer"
               className="btn-outlined squircle-pill px-8 py-4 text-[14px] text-center !text-toasted-grain !border-toasted-grain/50 hover:!bg-toasted-grain/10"
             >
-              Access Nearby Soil
+              I&apos;m a Buyer
             </Link>
           </div>
         </div>

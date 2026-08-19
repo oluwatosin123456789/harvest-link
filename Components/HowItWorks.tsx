@@ -39,9 +39,9 @@ const STEPS = [
         />
       </svg>
     ),
-    title: "Farmer Lists Produce",
+    title: "Farmer Scans & Lists",
     description:
-      "A farmer adds their fresh harvest with GPS coordinates, photos, and an AI-estimated shelf life — in under 60 seconds.",
+      "Photograph produce with Fresco. Get a freshness grade. List with confidence.",
   },
   {
     icon: (
@@ -63,9 +63,9 @@ const STEPS = [
         />
       </svg>
     ),
-    title: "Platform Matches Buyers",
+    title: "Buyer Discovers & Orders",
     description:
-      "Our system automatically surfaces that produce to consumers within a 15km optimal delivery radius. No searching required.",
+      "Nearby buyers find your produce on the map. Freshest listings surface first.",
   },
   {
     icon: (
@@ -93,9 +93,9 @@ const STEPS = [
         <circle cx="16" cy="10" r="2" stroke="#2D4739" strokeWidth="1.5" />
       </svg>
     ),
-    title: "Direct Coordination",
+    title: "Profile Grows with Every Sale",
     description:
-      "Buyer and farmer connect directly. No middlemen. Fresh produce moves from field to table in hours, not days.",
+      "Each completed order builds your Farmer Economic Activity Profile — your path to formal finance.",
   },
 ];
 

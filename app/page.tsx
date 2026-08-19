@@ -1,98 +1,23 @@
-import Navbar from "@/Components/Navbar";
-import Hero from "@/Components/Hero";
-import TwoWorlds from "@/Components/TwoWorlds";
-import HowItWorks from "@/Components/HowItWorks";
-import MapPreview from "@/Components/MapPreview";
-import FreshnessCard from "@/Components/FreshnessCard";
-import Footer from "@/Components/Footer";
-
-/* ─────────────────────────────────────────────
- * Landing Page — "The Modern Agrarian"
- *
- * Composition order:
- *   1. Navbar     (transparent, overlays hero)
- *   2. Hero       (85vh editorial, bottom-left aligned)
- *   3. TwoWorlds  (farmer/consumer value props)
- *   4. Featured   (sample Freshness Cards)
- *   5. HowItWorks (3-step timeline)
- *   6. MapPreview (contained sand-toned viewport)
- *   7. Footer     (minimal Forest Moss)
- * ───────────────────────────────────────────── */
-
-/* ── Sample produce data for Freshness Cards ── */
-const FEATURED_PRODUCE = [
-  {
-    image: "/images/produce-tomatoes.png",
-    name: "Plum Tomatoes",
-    farm: "Adeyemi Farm, Ogun",
-    distance: "12km away",
-    price: "₦2,400 / basket",
-    pickedHoursAgo: 4,
-    peakFreshnessHours: 18,
-    remainingPercent: 80,
-  },
-  {
-    image: "/images/produce-tomatoes.png",
-    name: "Sweet Yams",
-    farm: "Okafor Heritage, Ondo",
-    distance: "8km away",
-    price: "₦3,800 / tuber",
-    pickedHoursAgo: 2,
-    peakFreshnessHours: 72,
-    remainingPercent: 95,
-  },
-  {
-    image: "/images/produce-tomatoes.png",
-    name: "Fresh Peppers",
-    farm: "Ibrahim Greens, Kwara",
-    distance: "5km away",
-    price: "₦1,200 / basket",
-    pickedHoursAgo: 6,
-    peakFreshnessHours: 14,
-    remainingPercent: 60,
-    sellingFast: true,
-    remaining: 3,
-  },
-];
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Leaf } from "lucide-react";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-toasted-grain">
-      <Navbar />
-      <Hero />
-
-      {/* ── Two Worlds Section ────────────── */}
-      <TwoWorlds />
-
-      {/* ── Featured Produce ─────────────── */}
-      <section id="for-farmers" className="py-24 lg:py-32 bg-grain-white">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-deep-charcoal">
-              Fresh From the Soil
-            </h2>
-            <p className="mt-4 font-body text-[15px] text-warm-gray tracking-[0.3px]">
-              What&apos;s growing near you right now — picked hours ago, not days.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-            {FEATURED_PRODUCE.map((item) => (
-              <FreshnessCard key={item.name} {...item} />
-            ))}
-          </div>
-        </div>
+    <main className="min-h-dvh bg-[#F5EFE6] text-[#1A1A1A] lg:grid lg:grid-cols-2">
+      <section className="relative min-h-[46dvh] overflow-hidden lg:min-h-dvh">
+        <Image src="/images/produce-tomatoes.png" alt="" aria-hidden="true" fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/65 via-transparent to-[#1A1A1A]/10" />
+        <div className="absolute inset-x-6 top-7 flex items-center justify-between text-[#F5EFE6]"><span className="text-[15px] font-semibold uppercase tracking-[0.08em]">Harvest-Link</span><span className="border border-[#F5EFE6]/50 px-2 py-1 text-[9px] font-medium tracking-[0.12em]">DEMO</span></div>
+        <p className="absolute inset-x-6 bottom-6 max-w-sm font-heading text-2xl leading-tight text-[#F5EFE6] lg:bottom-12 lg:left-12 lg:text-4xl">Real farm work deserves to be seen.</p>
       </section>
-
-      {/* ── How It Works ─────────────────── */}
-      <HowItWorks />
-
-      {/* ── Map Preview ──────────────────── */}
-      <MapPreview />
-
-      {/* ── Footer ───────────────────────── */}
-      <Footer />
-    </div>
+      <section className="flex min-h-[54dvh] items-center px-6 py-10 lg:min-h-dvh lg:px-[12%]"><div className="w-full max-w-md animate-fade-up">
+        <div className="mb-8 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-[#4A4A42]"><Leaf size={14} className="text-[#B3541E]" aria-hidden="true" />Agricultural financial infrastructure</div>
+        <h1 className="font-heading text-[42px] font-medium leading-[1.05] tracking-[-0.025em] lg:text-[56px]">From farm activity<br />to financial identity.</h1>
+        <p className="mt-5 max-w-[310px] text-sm leading-[22px] text-[#4A4A42]">Sell your produce, build your business record, and create a financial profile from your real activity.</p>
+        <div className="mt-8 grid gap-3"><Link href="/auth/signup" className="flex h-[52px] items-center justify-center gap-2 rounded-sm bg-[#2D4739] text-[15px] font-semibold text-[#F5EFE6] transition-colors hover:bg-[#203429] focus:outline-2 focus:outline-offset-2 focus:outline-[#2D4739]">I&apos;m a Farmer <ArrowRight size={17} aria-hidden="true" /></Link><Link href="/marketplace" className="flex h-[52px] items-center justify-center rounded-sm border-[1.5px] border-[#1A1A1A] text-[15px] font-semibold transition-colors hover:bg-[#EDE4D8] focus:outline-2 focus:outline-offset-2 focus:outline-[#2D4739]">I&apos;m looking to buy</Link></div>
+        <p className="mt-4 text-center text-[13px] text-[#8C8C7A]">Already have an account? <Link href="/dashboard/farmer" className="underline underline-offset-2">Sign in</Link></p>
+      </div></section>
+    </main>
   );
 }

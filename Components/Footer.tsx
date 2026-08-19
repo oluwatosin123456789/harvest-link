@@ -12,6 +12,8 @@ import Link from "next/link";
 const NAV_LINKS = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "For Farmers", href: "#for-farmers" },
+  { label: "For Investors", href: "#" },
+  { label: "For Partners", href: "#" },
   { label: "Privacy", href: "#" },
   { label: "Terms", href: "#" },
 ];
@@ -28,8 +30,7 @@ export default function Footer() {
               Harvest–Link
             </p>
             <p className="font-body text-[14px] text-toasted-grain/50 mt-2 max-w-sm">
-              Closing the distance between Nigerian farms and local tables
-              through location intelligence.
+              Converting real agricultural activity into structured financial identity.
             </p>
           </div>
 

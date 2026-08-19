@@ -81,7 +81,10 @@ export default function MapPreview() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
 
         {/* Section Title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative">
+          <div className="inline-block mb-4 px-3 py-1 bg-[#DDA63A]/10 border border-[#DDA63A]/30 rounded-full font-body text-[11px] font-bold text-[#BF8B2E] uppercase tracking-wider">
+            Launching in Southwest Nigeria
+          </div>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-deep-charcoal">
             Discover What&apos;s Growing Near You
           </h2>

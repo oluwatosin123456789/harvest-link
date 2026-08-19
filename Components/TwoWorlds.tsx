@@ -9,9 +9,9 @@ import Link from "next/link";
  * ───────────────────────────────────────────── */
 
 const FARMER_POINTS = [
-  "List produce in seconds — no middlemen",
-  "Reach buyers within 15km automatically",
-  "AI-estimated shelf life builds buyer trust",
+  "List produce with AI-verified freshness",
+  "Build a trackable economic history",
+  "Unlock access to Wema Bank formal credit",
 ];
 
 const CONSUMER_POINTS = [
@@ -49,10 +49,10 @@ export default function TwoWorlds() {
         {/* Section Title */}
         <div className="text-center mb-16 lg:mb-20">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-deep-charcoal">
-            Two Worlds, One Link
+            Two Worlds, One Pipeline
           </h2>
           <p className="mt-4 font-body text-[15px] text-warm-gray tracking-[0.3px]">
-            Whether you grow it or source it — the distance is shorter than you think.
+            Building trust and value for both ends of the supply chain.
           </p>
         </div>
 
@@ -65,9 +65,9 @@ export default function TwoWorlds() {
               For Farmers
             </p>
             <h3 className="font-heading text-3xl lg:text-4xl font-semibold text-deep-charcoal mb-8">
-              Stop Losing
+              Grow Your Credit.
               <br />
-              Your Harvest.
+              Not Just Crops.
             </h3>
             <ul className="space-y-5 mb-10">
               {FARMER_POINTS.map((point) => (
@@ -83,19 +83,19 @@ export default function TwoWorlds() {
               href="/auth/signup?role=farmer"
               className="btn-burnt-clay squircle-pill inline-block px-8 py-3.5 text-[14px]"
             >
-              Begin Selling
+              Start Building Record
             </Link>
           </div>
 
           {/* ── Consumer Card ────────────── */}
           <div className="card-surface-solid squircle p-10 lg:p-14 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_16px_48px_rgba(26,26,26,0.08)]">
             <p className="font-body text-[11px] font-medium tracking-[1.5px] uppercase text-forest-moss mb-4">
-              For Consumers
+              For Buyers
             </p>
             <h3 className="font-heading text-3xl lg:text-4xl font-semibold text-deep-charcoal mb-8">
               Know Exactly What
               <br />
-              You&apos;re Eating.
+              You&apos;re Buying.
             </h3>
             <ul className="space-y-5 mb-10">
               {CONSUMER_POINTS.map((point) => (
@@ -108,10 +108,10 @@ export default function TwoWorlds() {
               ))}
             </ul>
             <Link
-              href="/auth/signup?role=buyer"
+              href="/auth/signup?role=consumer"
               className="btn-forest-moss squircle-pill inline-block px-8 py-3.5 text-[14px]"
             >
-              Find Nearby Farms
+              Access Verified Farms
             </Link>
           </div>
         </div>

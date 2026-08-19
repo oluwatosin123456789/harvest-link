@@ -48,7 +48,7 @@ export default function Navbar() {
 
             {/* ── Desktop Navigation ──────────── */}
             <div className="hidden md:flex items-center gap-1">
-              {["HOW IT WORKS", "THE MAP", "FOR FARMERS"].map((item, i) => (
+              {["HOW IT WORKS", "THE SCANNER", "IMPACT"].map((item, i) => (
                 <span key={item} className="flex items-center">
                   {i > 0 && (
                     <span className={`mx-4 text-xs ${scrolled ? "text-warm-gray" : "text-toasted-grain/40"}`}>
@@ -83,7 +83,7 @@ export default function Navbar() {
                 href="/auth/signup"
                 className="btn-burnt-clay squircle-pill px-6 py-2.5 text-[13px] inline-block"
               >
-                Secure Your Harvest
+                Get Started
               </Link>
             </div>
 
@@ -127,8 +127,8 @@ export default function Navbar() {
         <div className="flex-1 flex flex-col items-center justify-center gap-2">
           {[
             { label: "How It Works", href: "#how-it-works" },
-            { label: "The Map", href: "#the-map" },
-            { label: "For Farmers", href: "#for-farmers" },
+            { label: "The Scanner", href: "#the-scanner" },
+            { label: "Impact", href: "#impact" },
           ].map(({ label, href }) => (
             <Link
               key={label}
@@ -155,7 +155,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="btn-burnt-clay squircle block text-center py-4 text-[15px]"
           >
-            Secure Your Harvest
+            Get Started
           </Link>
         </div>
       </div>
