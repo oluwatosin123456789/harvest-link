@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Space_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { HarvestLinkProvider } from "./providers/HarvestLinkProvider";
 
 /* ─────────────────────────────────────────────
  * Typography — "The Modern Agrarian"
@@ -19,6 +20,15 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+/* Data/identifier font — order IDs, farmer refs, timestamps.
+ * The design uses it anywhere a value is machine-generated. */
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -45,10 +55,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${spaceGrotesk.variable}`}
+      className={`${cormorant.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-body antialiased bg-toasted-grain text-deep-charcoal">
-        {children}
+        <HarvestLinkProvider>{children}</HarvestLinkProvider>
       </body>
     </html>
   );

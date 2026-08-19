@@ -22,9 +22,47 @@
   --color-grain-white: #FDFAF5;
   --color-forest-moss-light: #3d6150;
 
+  /* ── Surfaces (from the Demo canvas) ──────── */
+  /* Sand is the recessed canvas the product screens sit on;
+   * Ink is the dark hero used by farmer + Wema surfaces. */
+  --color-sand: #EDE4D8;
+  --color-ink: #111410;
+  --color-card: #FFFFFF;
+  --color-sage: #8C8C7A;
+  --color-body-text: #4A4A42;
+  --color-hairline: #D9D0C3;
+  --color-wema-ink: #0B1C13;
+
+  /* ── FEAP bands ───────────────────────────── */
+  /* Ordered ladder: Emerging → Building → Developing → Established → Strong */
+  --color-feap-emerging: #B3541E;
+  --color-feap-building: #C17D0A;
+  --color-feap-developing: #FFC107;
+  --color-feap-established: #2D4739;
+  --color-feap-strong: #1E3128;
+
+  /* ── Freshness tiers (Fresco categories) ──── */
+  --color-fresh-excellent: #2A6B45;
+  --color-fresh-good: #4A8C3F;
+  --color-fresh-fair: #C17D0A;
+  --color-fresh-poor: #B3541E;
+
+  /* ── Order status ─────────────────────────── */
+  --color-status-preparing: #C17D0A;
+  --color-status-ready: #2A6B45;
+
+  /* ── Motion scale ─────────────────────────── */
+  --ease-agrarian: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-micro: 120ms;
+  --duration-fast: 180ms;
+  --duration-base: 260ms;
+  --duration-slow: 400ms;
+  --duration-narrative: 600ms;
+
   /* ── Typography ───────────────────────────── */
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
 /* ── Base Layer ──────────────────────────────── */
@@ -350,4 +388,75 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #6B6560;
+}
+
+/* ═══════════════════════════════════════════════
+ * PRODUCT SURFACE UTILITIES
+ *
+ * The marketing pages use `.squircle` + `.card-surface`
+ * (soft, editorial, borderless). The product screens use
+ * a tighter register — hairline borders, small radii —
+ * so an instrument reads as an instrument. Both are
+ * intentional; don't collapse them into one.
+ * ═══════════════════════════════════════════════ */
+
+/* ── Eyebrow label ──────────────────────────────
+ * The 11px uppercase caption that sits above nearly
+ * every block in the design.
+ * ───────────────────────────────────────────── */
+.u-label {
+  font-family: var(--font-body), "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8C8C7A;
+}
+
+/* ── Machine-generated values ───────────────────
+ * Order IDs, farmer refs, timestamps, sync stamps.
+ * ───────────────────────────────────────────── */
+.u-mono {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Panel ──────────────────────────────────────
+ * The product-side card: white, hairline border, 8px.
+ * ───────────────────────────────────────────── */
+.panel {
+  background: #FFFFFF;
+  border: 1px solid #D9D0C3;
+  border-radius: 8px;
+}
+
+.panel-recessed {
+  background: #EDE4D8;
+  border: 1px solid #D9D0C3;
+  border-radius: 8px;
+}
+
+/* ── Shape system ───────────────────────────────
+ * Buttons 4px · cards 8px · sheets 16px · tables 0px.
+ * ───────────────────────────────────────────── */
+.r-control { border-radius: 4px; }
+.r-card    { border-radius: 8px; }
+.r-sheet   { border-radius: 16px; }
+.r-table   { border-radius: 0; }
+
+/* ═══════════════════════════════════════════════
+ * MOTION PREFERENCES
+ * Honour the user's OS-level reduced-motion setting.
+ * ═══════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
